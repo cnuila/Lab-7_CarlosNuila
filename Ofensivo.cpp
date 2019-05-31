@@ -4,7 +4,7 @@ Ofensivo::Ofensivo(){
     rango = 0;
     fuerza = 0;
 }
-Ofensivo::Ofensivo(double rango, double fuerza):PoderEspecial(nombre,nivelPoder){
+Ofensivo::Ofensivo(double rango, double fuerza,string nombreP,int nivelP):PoderEspecial(nombreP,nivelP){
     this->rango = rango;
     this->fuerza = fuerza;
 }

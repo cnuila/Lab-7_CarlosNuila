@@ -22,3 +22,7 @@ int PoderEspecial::getNivelPoder(){
 void PoderEspecial::setNivelPoder(int nivelPoder){
     this->nivelPoder = nivelPoder;
 }
+
+string PoderEspecial::toString(){
+    return "Es un poder";
+}

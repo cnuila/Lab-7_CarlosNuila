@@ -10,7 +10,7 @@ class Curativo:public PoderEspecial{
 
    public:
        Curativo();
-       Curativo(string);
+       Curativo(string tipoCuracion,string nombreP,int nivelP);
 
         string getTipoCuracion();
        void setTipoCuracion(string);

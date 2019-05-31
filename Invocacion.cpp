@@ -6,7 +6,7 @@ Invocacion::Invocacion(){
     habilidad = "";
     tipoMascota = "";
 }
-Invocacion::Invocacion(string nombre, string especie, string habilidad, string tipoMascota):PoderEspecial(nombre,nivelPoder){
+Invocacion::Invocacion(string nombre, string especie, string habilidad, string tipoMascota,string nombreP,int nivelP):PoderEspecial(nombreP,nivelP){
     this->nombre = nombre;
     this->especie = especie;
     this->habilidad = habilidad;

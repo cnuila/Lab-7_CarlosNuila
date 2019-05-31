@@ -13,7 +13,7 @@ class NonBender:public Persona{
 
    public:
        NonBender();
-       NonBender(string,double,double);
+       NonBender(string trabajo, double fuerza, double velocidad,string nOrigen,string nombreP,int edadP,char s);
 
         string getTrabajo();
        void setTrabajo(string);

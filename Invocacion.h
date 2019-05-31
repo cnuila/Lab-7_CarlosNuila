@@ -13,7 +13,7 @@ class Invocacion:public PoderEspecial{
 
    public:
        Invocacion();
-       Invocacion(string,string,string,string);
+       Invocacion(string nombre, string especie, string habilidad, string tipoMascota,string nombreP,int nivelP);
 
         string getNombre();
        void setNombre(string);

@@ -13,7 +13,7 @@ class FireBender:public Persona{
 
    public:
        FireBender();
-       FireBender(int,int,PoderEspecial*);
+       FireBender(int numCicatrices, int numVictorias, PoderEspecial* poderEspecial,string nOrigen,string nombreP,int edadP,char s);
        ~FireBender();
 
         int getNumcicatrices();

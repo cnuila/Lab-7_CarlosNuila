@@ -5,7 +5,7 @@ WaterBender::WaterBender(){
     armaPreferencia = "";
     poderEspecial = NULL;
 }
-WaterBender::WaterBender(string tribu, string armaPreferencia, PoderEspecial* poderEspecial):Persona(nacionOrigen,nombre,edad,sexo){
+WaterBender::WaterBender(string tribu, string armaPreferencia, PoderEspecial* poderEspecial,string nOrigen,string nombreP,int edadP,char s):Persona(nOrigen,nombreP,edadP,s){
     this->tribu = tribu;
     this->armaPreferencia = armaPreferencia;
     this->poderEspecial = poderEspecial;

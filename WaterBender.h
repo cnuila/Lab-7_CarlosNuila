@@ -13,7 +13,7 @@ class WaterBender:public Persona{
 
    public:
        WaterBender();
-       WaterBender(string,string,PoderEspecial*);
+       WaterBender(string tribu, string armaPreferencia, PoderEspecial* poderEspecial,string nOrigen,string nombreP,int edadP,char s);
        ~WaterBender();
 
         string getTribu();

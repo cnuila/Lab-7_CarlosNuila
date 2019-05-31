@@ -5,7 +5,7 @@ NonBender::NonBender(){
     fuerza = 0;
     velocidad = 0;
 }
-NonBender::NonBender(string trabajo, double fuerza, double velocidad):Persona(nacionOrigen,nombre,edad,sexo){
+NonBender::NonBender(string trabajo, double fuerza, double velocidad,string nOrigen,string nombreP,int edadP,char s):Persona(nOrigen,nombreP,edadP,s){
     this->trabajo = trabajo;
     this->fuerza = fuerza;
     this->velocidad = velocidad;

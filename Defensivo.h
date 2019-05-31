@@ -11,7 +11,7 @@ class Defensivo:public PoderEspecial{
 
    public:
        Defensivo();
-       Defensivo(double,double);
+       Defensivo(double resistencia, double duracion,string nombreP,int nivelP);
 
         double getResistencia();
        void setResistencia(double);

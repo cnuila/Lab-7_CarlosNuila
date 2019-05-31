@@ -13,7 +13,7 @@ class AirBender:public Persona{
 
    public:
         AirBender();
-        AirBender(double,string,PoderEspecial*);
+        AirBender(double cantidadPelo, string colorFlechas, PoderEspecial* poderEspecial, string nOrigen,string nombreP,int edadP,char s);
         ~AirBender();
 
         double getCantidadpelo();

@@ -5,7 +5,7 @@ FireBender::FireBender(){
     numVictorias = 0;
     poderEspecial = NULL;
 }
-FireBender::FireBender(int numCicatrices, int numVictorias, PoderEspecial* poderEspecial):Persona(nacionOrigen,nombre,edad,sexo){
+FireBender::FireBender(int numCicatrices, int numVictorias, PoderEspecial* poderEspecial,string nOrigen,string nombreP,int edadP,char s):Persona(nOrigen,nombreP,edadP,s){
     this->numCicatrices = numCicatrices;
     this->numVictorias = numVictorias;
     this->poderEspecial = poderEspecial;

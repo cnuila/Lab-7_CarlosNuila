@@ -4,7 +4,7 @@ Defensivo::Defensivo(){
     resistencia = 0;
     duracion = 0;
 }
-Defensivo::Defensivo(double resistencia, double duracion):PoderEspecial(nombre, nivelPoder){
+Defensivo::Defensivo(double resistencia, double duracion,string nombreP,int nivelP):PoderEspecial(nombreP,nivelP){
     this->resistencia = resistencia;
     this->duracion = duracion;
 }

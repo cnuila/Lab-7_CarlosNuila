@@ -5,7 +5,7 @@ AirBender::AirBender(){
     colorFlechas = "";
     poderEspecial = NULL;
 }
-AirBender::AirBender(double cantidadPelo, string colorFlechas, PoderEspecial* poderEspecial):Persona(nacionOrigen,nombre,edad,sexo){
+AirBender::AirBender(double cantidadPelo, string colorFlechas, PoderEspecial* poderEspecial, string nOrigen,string nombreP,int edadP,char s):Persona(nOrigen,nombreP,edadP,s){
     this->cantidadPelo = cantidadPelo;
     this->colorFlechas = colorFlechas;
     this->poderEspecial = poderEspecial;

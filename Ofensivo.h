@@ -11,7 +11,7 @@ class Ofensivo:public PoderEspecial{
 
    public:
        Ofensivo();
-       Ofensivo(double,double);
+       Ofensivo(double rango, double fuerza,string nombreP,int nivelP);
 
         double getRango();
        void setRango(double);

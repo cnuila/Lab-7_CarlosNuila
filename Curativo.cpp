@@ -3,7 +3,7 @@
 Curativo::Curativo(){
     tipoCuracion = "";
 }
-Curativo::Curativo(string tipoCuracion):PoderEspecial(nombre,nivelPoder){
+Curativo::Curativo(string tipoCuracion,string nombreP,int nivelP):PoderEspecial(nombreP,nivelP){
     this->tipoCuracion = tipoCuracion;
 }
 
