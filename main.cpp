@@ -301,8 +301,6 @@ void escribirArchivo(vector<Persona*> personas){
             string edad_s = to_string(personas[i]->getEdad());
             archivo << "\nEdad: "<< edad_s;
             archivo << "\nSexo: "<<personas[i]->getSexo();
-            cout <<  typeid(personas[i]).name();
-            cout << typeid(AirBender).name();
             if (dynamic_cast<AirBender*>(personas[i])){
                 archivo << "\nAir Bender\n";
                 AirBender* persona = dynamic_cast<AirBender*>(personas[i]);

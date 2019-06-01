@@ -1,6 +1,11 @@
-1) Nacion Origen: dsa
-Nombre: sda
+1) Nacion Origen: Mexico
+Nombre: Carlos Nuila
 Edad: 12
-Sexo: m
-Poder Especial
+Sexo: M
+Air Bender
 
+Cantidad de Pelo: 13.000000
+Color Flechas: Verdes
+Poder Especial
+Curativo:
+Tipo de Curacion: CurarSangre
