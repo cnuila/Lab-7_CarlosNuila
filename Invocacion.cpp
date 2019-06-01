@@ -43,6 +43,6 @@ void Invocacion::setTipoMascota(string tipoMascota){
 
 string Invocacion::toString(){
     string nivelPoder_s = to_string(nivelPoder);
-    return "Poder Especial:\nNombre: "+nombre+"\n Nivel de Poder: "+nivelPoder_s+
+    return "Poder Especial:\nNombre: "+nombre+"\nNivel de Poder: "+nivelPoder_s+
             "\nInvocacion:\nNombre: "+nombre+"\nEspecie: "+especie+"\nHabilidad: "+habilidad+"\nTipo de Mascota: "+tipoMascota;
 }

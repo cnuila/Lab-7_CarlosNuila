@@ -16,6 +16,6 @@ void Curativo::setTipoCuracion(string tipoCuracion){
 
 string Curativo::toString(){
     string nivelPoder_s = to_string(nivelPoder);
-    return "Poder Especial:\nNombre: "+nombre+"\n Nivel de Poder: "+nivelPoder_s+
+    return "Poder Especial:\nNombre: "+nombre+"\nNivel de Poder: "+nivelPoder_s+
             "\nCurativo:\nTipo de Curacion: "+tipoCuracion;
 }

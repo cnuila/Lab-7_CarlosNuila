@@ -5,7 +5,7 @@ EarthBender::EarthBender(){
     graduacion = 0;
     poderEspecial = 0;
 }
-EarthBender::EarthBender(int colesCosechadas, int graduacion, PoderEspecial* poderEspecial, string nOrigen,string nombreP,int edadP,char s):Persona(nOrigen,nombreP,edadP,s){
+EarthBender::EarthBender(int colesCosechadas, double graduacion, PoderEspecial* poderEspecial, string nOrigen,string nombreP,int edadP,char s):Persona(nOrigen,nombreP,edadP,s){
     this->colesCosechadas = colesCosechadas;
     this->graduacion = graduacion;
     this->poderEspecial = poderEspecial;
@@ -25,10 +25,10 @@ void EarthBender::setcolesCosechadas(int colesCosechadas){
     this->colesCosechadas = colesCosechadas;
 }
 
-int EarthBender::getGraduacion(){
+double EarthBender::getGraduacion(){
     return graduacion;
 }
-void EarthBender::setGraduacion(int graduacion){
+void EarthBender::setGraduacion(double graduacion){
     this->graduacion = graduacion;
 }
 

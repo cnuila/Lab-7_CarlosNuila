@@ -170,9 +170,16 @@ int main(){
                     {
                         string tribu = "";
                         string armaPreferencia = "";
-                        cout <<"Ingrese el nombre de la tribu: ";
-                        getline(cin,tribu);
-                        getline(cin,tribu);
+                        int esNorte = -1;
+                        while (esNorte < 0 || esNorte >1){
+                            cout <<"La tribu es del Norte[0] o del Sur[1]: ";
+                            cin >> esNorte;
+                        }
+                        if (esNorte == 0){
+                            tribu = "Norte";
+                        }else{
+                            tribu = "Sur";
+                        }
                         cout <<"Ingrese el arma de preferencia: ";
                         cin >> armaPreferencia;
                         personas.push_back(new WaterBender(tribu,armaPreferencia,poderEspecial,nacionOrigen,nombre,edad,sexo));
@@ -180,11 +187,36 @@ int main(){
                     }
                     case 4:
                     {
-                        
+                        int colesCosechadas = 0;
+                        while (colesCosechadas<= 0){
+                            cout <<"Ingrese el numero de coles cosechadas: ";
+                            cin >> colesCosechadas;
+                        }
+                        double graduacion = 0;
+                        while (graduacion<= 0 || graduacion >20){
+                            cout <<"Ingrese la graduacion en los ojos: ";
+                            cin >> graduacion;
+                        }
+                        personas.push_back(new EarthBender(colesCosechadas,graduacion,poderEspecial,nacionOrigen,nombre,edad,sexo));
                         break;
                     }
                     case 5:
                     {
+                        string trabajo = "";
+                        cout <<"Ingrese el trabajo: ";
+                        getline(cin, trabajo);
+                        getline(cin,trabajo);
+                        double fuerza = 0;
+                        while(fuerza <= 0){
+                            cout << "Ingrese la fuerza: ";
+                            cin >> fuerza;
+                        }
+                        double velocidad = 0;
+                        while(velocidad <= 0){
+                            cout << "Ingrese la velocidad: ";
+                            cin >> velocidad;
+                        }
+                        personas.push_back(new NonBender(trabajo,fuerza,velocidad,nacionOrigen,nombre,edad,sexo));
                         break;
                     }
                 }
@@ -192,13 +224,41 @@ int main(){
             }
             case 2:
             {
+                if (!personas.empty()){
+                    int posicion = -1;
+                    while (posicion< 0 || posicion >= personas.size()){
+                        cout <<"Ingrese la posicion a eliminar: ";
+                        cin >> posicion;
+                    }
+                    personas.erase(personas.begin() + posicion);
+                }else{
+                    cout<<endl;
+                    cout <<"No ha agregado personas"<<endl;
+                    cout<<endl;
+                }
                 break;
             }
             case 3:
             {
+                if (!personas.empty()){
+                    cout <<"Lista Personas:"<<endl;
+                    for (int i = 0; i < personas.size();i++){
+                        cout<<endl;
+                        cout << i+1<<")"<<personas[i]->toString()<<endl;
+                        cout <<endl;
+                    }
+                }else{
+                    cout<<endl;
+                    cout <<"No ha agregado personas"<<endl;
+                    cout<<endl;
+                }
                 break;
             }
         }
+    }
+    for (int i = 0; i < personas.size();i++){
+        delete personas[i];
+        personas[i] = NULL;
     }
     return 0;
 }

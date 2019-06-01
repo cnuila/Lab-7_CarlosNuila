@@ -27,6 +27,6 @@ string Defensivo::toString(){
     string nivelPoder_s = to_string(nivelPoder);
     string resistencia_s = to_string(resistencia);
     string duracion_s = to_string(duracion);
-    return "Poder Especial:\nNombre: "+nombre+"\n Nivel de Poder: "+nivelPoder_s+
+    return "Poder Especial:\nNombre: "+nombre+"\nNivel de Poder: "+nivelPoder_s+
             "\nDefensivo:\nResistencia: "+resistencia_s+"\nDuracion: "+duracion_s;
 }

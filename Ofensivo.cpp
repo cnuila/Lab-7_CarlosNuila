@@ -27,7 +27,7 @@ string Ofensivo::toString(){
     string nivelPoder_s = to_string(nivelPoder);
     string rango_s = to_string(rango);
     string fuerza_s = to_string(fuerza);
-    return "Poder Especial:\nNombre: "+nombre+"\n Nivel de Poder: "+nivelPoder_s+
+    return "Poder Especial:\nNombre: "+nombre+"\nNivel de Poder: "+nivelPoder_s+
             "\nOfensivo:\nRango: "+rango_s+"\nFuerza: "+fuerza_s;
 
 }
