@@ -12,7 +12,11 @@
 #include<iostream>
 #include<string>
 #include<vector>
+#include<fstream>
+#include<typeinfo>
 using namespace std;
+
+void escribirArchivo(vector<Persona*>);
 
 int main(){
     int opcion = 0;
@@ -149,6 +153,7 @@ int main(){
                         cout <<"Ingrese el color de la flechas en el cuerpo: ";
                         cin >> colorFlechas;
                         personas.push_back(new AirBender(cantidadPelo,colorFlechas,poderEspecial,nacionOrigen,nombre,edad,sexo));
+                        escribirArchivo(personas);
                         break;
                     }
                     case 2:
@@ -164,6 +169,7 @@ int main(){
                             cin >> numVictorias;
                         }
                         personas.push_back(new FireBender(numCicatrices,numVictorias,poderEspecial,nacionOrigen,nombre,edad,sexo));
+                        escribirArchivo(personas);
                         break;
                     }
                     case 3:
@@ -183,6 +189,7 @@ int main(){
                         cout <<"Ingrese el arma de preferencia: ";
                         cin >> armaPreferencia;
                         personas.push_back(new WaterBender(tribu,armaPreferencia,poderEspecial,nacionOrigen,nombre,edad,sexo));
+                        escribirArchivo(personas);
                         break;
                     }
                     case 4:
@@ -198,6 +205,7 @@ int main(){
                             cin >> graduacion;
                         }
                         personas.push_back(new EarthBender(colesCosechadas,graduacion,poderEspecial,nacionOrigen,nombre,edad,sexo));
+                        escribirArchivo(personas);
                         break;
                     }
                     case 5:
@@ -217,6 +225,7 @@ int main(){
                             cin >> velocidad;
                         }
                         personas.push_back(new NonBender(trabajo,fuerza,velocidad,nacionOrigen,nombre,edad,sexo));
+                        escribirArchivo(personas);
                         break;
                     }
                 }
@@ -261,4 +270,89 @@ int main(){
         personas[i] = NULL;
     }
     return 0;
+}
+
+void escribirArchivo(vector<Persona*> personas){
+    ofstream archivo;
+    archivo.open("Personas.txt",ios::out);
+    if (!archivo.fail()){
+        for (int i = 0; i < personas.size();i++){
+            PoderEspecial* poder;
+            archivo << i + 1 << ") Nacion Origen: ";
+            archivo << personas[i]->getNacionorigen();
+            archivo <<"\nNombre: " << personas[i]->getNombre();
+            string edad_s = to_string(personas[i]->getEdad());
+            archivo << "\nEdad: "<< edad_s;
+            archivo << "\nSexo: "<<personas[i]->getSexo();
+            if (typeid(personas[i])== typeid(AirBender)){
+                archivo << "\nAir Bender\n";
+                AirBender* persona = dynamic_cast<AirBender*>(personas[i]);
+                string cantidadPelo_s = to_string(persona->getCantidadpelo());
+                archivo << "\nCantidad de Pelo: "<< cantidadPelo_s;
+                archivo << "\nColor Flechas: "<<persona->getColorflechas();
+                poder = persona->getPoderespecial();
+            }
+            if (typeid(personas[i])== typeid(FireBender)){
+                archivo << "\nFire Bender\n";
+                FireBender* persona = dynamic_cast<FireBender*>(personas[i]);
+                string numVictorias_s = to_string(persona->getNumvictorias());
+                string numCicatrices_s = to_string(persona->getNumcicatrices());
+                archivo << "\nNumero de Cicatrices: "<< numCicatrices_s;
+                archivo << "\nNumero de Victorias: "<<numVictorias_s;
+                poder = persona->getPoderEspecial();
+            }
+            if (typeid(personas[i])== typeid(EarthBender)){
+                archivo << "\nEarth Bender\n";
+                EarthBender* persona = dynamic_cast<EarthBender*>(personas[i]);
+                string numColes_s = to_string(persona->getcolesCosechadas());
+                string graduacion_s = to_string(persona->getGraduacion());
+                archivo << "\nNumero de coles cosechadas: "<< numColes_s;
+                archivo << "\nGraduacion de los ojos: "<<graduacion_s;
+                poder = persona->getPoderEspecial();
+            }
+            if (typeid(personas[i])== typeid(WaterBender)){
+                archivo << "\nWater Bender\n";
+                WaterBender* persona = dynamic_cast<WaterBender*>(personas[i]);
+                archivo << "\nTribu: "<< persona->getTribu();
+                archivo << "\nArma de Preferencia: "<<persona->getArmaPreferencia();
+                poder = persona->getPoderEspecial();
+            }
+            if (typeid(personas[i])== typeid(NonBender)){
+                archivo << "\nNon-Bender\n";
+                NonBender* persona = dynamic_cast<NonBender*>(personas[i]);
+                string fuerza_s = to_string(persona->getFuerza());
+                string velocidad_s = to_string(persona->getVelocidad());
+                archivo << "\nTrabajo : "<< persona->getTrabajo();
+                archivo << "\nFuerza: "<<fuerza_s;
+                archivo << "\nVelocidad: "<<velocidad_s;
+            }
+            if (typeid(personas[i])!= typeid(NonBender)){
+                archivo << "\nPoder Especial\n";
+                if (typeid(poder) == typeid(Ofensivo)){
+                    archivo <<"Ofensivo:";
+                    Ofensivo* poder2 = dynamic_cast<Ofensivo*>(poder);
+                    string rango_s = to_string(poder2->getRango());
+                    archivo<<"\nRango: "<<rango_s;
+                }
+                if (typeid(poder) == typeid(Defensivo)){
+                    archivo <<"Defensivo:";
+                    Defensivo* poder2 = dynamic_cast<Defensivo*>(poder);
+                    string resistencia_s = to_string(poder2->getResistencia());
+                    archivo<<"\nResistencia: "<<resistencia_s;
+                }
+                if (typeid(poder) == typeid(Curativo)){
+                    archivo <<"Curativo:";
+                    Curativo* poder2 = dynamic_cast<Curativo*>(poder);
+                    archivo<<"\nTipo de Curacion: "<<poder2->getTipoCuracion();
+                }
+                if (typeid(poder) == typeid(Invocacion)){
+                    archivo <<"Invocacion:";
+                    Invocacion* poder2 = dynamic_cast<Invocacion*>(poder);
+                    archivo<<"\nEspecie: "<<poder2->getEspecie();
+                }
+            }
+            archivo<<"\n";
+        }
+    }
+    archivo.close();
 }

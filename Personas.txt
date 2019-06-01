@@ -1,0 +1,6 @@
+1) Nacion Origen: Mexico
+Nombre: Carlos Nuila
+Edad: 12
+Sexo: M
+Poder Especial
+
