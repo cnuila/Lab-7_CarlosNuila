@@ -251,11 +251,28 @@ int main(){
             {
                 if (!personas.empty()){
                     cout <<"Lista Personas:"<<endl;
+                    cout<<endl;
                     for (int i = 0; i < personas.size();i++){
-                        cout<<endl;
-                        cout << i+1<<")"<<personas[i]->toString()<<endl;
-                        cout <<endl;
+                        if (dynamic_cast<WaterBender*>(personas[i])){
+                            cout << personas[i]->toString()<<endl;
+                        }
                     }
+                    for (int i = 0; i < personas.size();i++){
+                        if (dynamic_cast<FireBender*>(personas[i])){
+                            cout << personas[i]->toString()<<endl;
+                        }
+                    }
+                    for (int i = 0; i < personas.size();i++){
+                        if (dynamic_cast<EarthBender*>(personas[i])){
+                            cout << personas[i]->toString()<<endl;
+                        }
+                    }
+                    for (int i = 0; i < personas.size();i++){
+                        if (dynamic_cast<AirBender*>(personas[i])){
+                            cout << personas[i]->toString()<<endl;
+                        }
+                    }
+                    cout<<endl;
                 }else{
                     cout<<endl;
                     cout <<"No ha agregado personas"<<endl;
@@ -284,6 +301,8 @@ void escribirArchivo(vector<Persona*> personas){
             string edad_s = to_string(personas[i]->getEdad());
             archivo << "\nEdad: "<< edad_s;
             archivo << "\nSexo: "<<personas[i]->getSexo();
+            cout <<  typeid(personas[i]).name();
+            cout << typeid(AirBender).name();
             if (typeid(personas[i])== typeid(AirBender)){
                 archivo << "\nAir Bender\n";
                 AirBender* persona = dynamic_cast<AirBender*>(personas[i]);

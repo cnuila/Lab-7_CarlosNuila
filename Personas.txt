@@ -1,6 +1,6 @@
-1) Nacion Origen: Mexico
-Nombre: Carlos Nuila
+1) Nacion Origen: dsa
+Nombre: sda
 Edad: 12
-Sexo: M
+Sexo: m
 Poder Especial
 
